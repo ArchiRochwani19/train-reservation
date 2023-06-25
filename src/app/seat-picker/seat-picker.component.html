@@ -1,0 +1,17 @@
+<mat-card class="page2">
+    <mat-card-header>
+      <mat-card-title>Train Booking</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+    <div class="container">
+        <ng-container *ngFor="let n of trainSeat">
+            <mat-icon (click)=changeReservation(n) class={{n.booking}} >account_box</mat-icon>
+        </ng-container>
+    </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [disabled]="count!=getCount"(click)=bookedSeat()>CONFIRM</button>
+      <button mat-raised-button color="accent" [disabled]="count==0"(click)=clearSeat()>CANCEL</button>
+    </mat-card-actions>
+  </mat-card>
